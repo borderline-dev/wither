@@ -4,7 +4,7 @@ use thiserror::Error;
 pub type Result<T> = std::result::Result<T, WitherError>;
 
 /// Wither error variants.
-#[derive(Debug, Error)]
+#[derive(Debug, Clone, Error)]
 pub enum WitherError {
     /// An error from the underlying `mongodb` driver.
     #[error("{0}")]
